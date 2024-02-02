@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS Bootmate_db;
+CREATE DATABASE Bootmate_db;
+
+
