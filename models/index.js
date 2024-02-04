@@ -1,5 +1,5 @@
-const Student = require('./Students');
-const Class = require('./Classes');
+const Student = require('./Student');
+const Class = require('./Class');
 
 Student.belongsTo(Class, {
     foreignKey: 'class_id'

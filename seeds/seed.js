@@ -7,12 +7,12 @@ const ClassData = require('./Classdata.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const student = await Student.bulkCreate(StudentData, {
+  await Student.bulkCreate(StudentData, {
     individualHooks: true,
     returning: true,
   });
 
-  const classes = await Class.bulkCreate(ClassData)
+  await Class.bulkCreate(ClassData);
 
   process.exit(0);
 };
