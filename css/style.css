@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900);
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('C:\Users\dahen\desktop\bootcamp\project-2\Bootmate\images\html-system-website-concept.jpg');
+    font-size: 100%;
+    font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    padding: 50px;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+h1, h2, h3 {
+    font-weight: 900;
+}
+ul {
+    list-style: none;
+}
+h1 {
+    margin: 30px 0;
+    text-align: center;
+    color: black;
+}
+.student-list-container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.student {
+    background-color: white;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.student * {
+    color: black;
+}
+.student img {
+    float: left;
+    margin-right: 25px;
+    height: 150px;
+}

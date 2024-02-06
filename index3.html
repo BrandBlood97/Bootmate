@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>BootMate</title>
+</head>
+<body>
+    <h1>BootMate</h1>
+    <ul class="student-list-container"></ul>
+        
+
+    <script id ="student-template" type="text/x-handlebars-template">
+        {{#each student}}
+        <li class="student">
+            <img src="./images/background UCF.png">
+            <h2>Student Name:  {{firstName}} {{lastName}}</h2>
+            {{#if phoneNumber}}<p>Student Phone Number:  {{phoneNumber}}</p>{{/if}}
+            {{#if emailAddress}}<p>Student Email Address:  {{emailAddress}}</p>{{/if}}
+            {{#if employment}}<p>Student looking for employment:  {{employment}}</p>{{/if}}
+            {{#if collaboration}}<p>Student looking for collaboration:  {{collaboration}}</p>{{/if}}
+            {{#if graduationDate}}<p>Date of Graduation:  {{graduationDate}}</p>{{/if}}
+        </li>
+        {{/each}}
+    </script>
+
+    <script src="./js/scripts.js"></script>
+    <script erc="js/handlebars-v4.0.5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    
+</body>
+</html>
+
+
+
+
