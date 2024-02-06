@@ -7,5 +7,15 @@
         "seeking_collab": true,
         "email": "royreid3rd@gmail.com",
         "password": "12345"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "graduation_month": "April",
+        "looking_for_work": true,
+        "seeking_collab": true,
+        "email": "hhh@hhh.com",
+        "password": "12345"
     }
 ]
+
