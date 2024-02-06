@@ -12,31 +12,37 @@
     <title>BootMate</title>
 </head>
 <body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-dark me-md-2" type="button">Log Out</button>
+            </div>
+        </div>
+    </nav>
     <h1>BootMate</h1>
         <div class="container text-center">            
-            <div class="row">
-                <div class="col-4 border">
-                    <h2>New User Registration:</h2>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <a href="./index2.html" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Enter</a>
-                </div>              
-                <div class="col-4">
-                    <img src="./images/background UCF.png" class="img-fluid" alt="image of class logo">
+            <div class="row align-items-center">
+                <div class="col">
+                    <img src="./images/background UCF.png" class="img-" alt="image of class logo">
                 </div>
-                <div class="col-4 border">
-                    <h2>Existing User</h2>
-                    <h2>Login-in:</h2>
+                <br>
+                <div class="col-6 border">
+                    <h2>Search for Existing User:</h2>
+                    <br>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <label for="floatingInput">First Name</label>
                       </div>
+                      <p>and / or:</p>
                       <div class="form-floating">
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">Last Name</label>
                       </div>
+                      <br>
                       <a href="./index3.html" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Submit</a>
                 </div>
             </div>
