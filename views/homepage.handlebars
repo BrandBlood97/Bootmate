@@ -1,0 +1,14 @@
+<ul class="student-list-container"></ul>
+{{#each student}}
+  <li class="student">
+    <img src="../images/background-UCF.png" />
+    <h2>Student Name: {{firstName}} {{lastName}}</h2>
+    {{#if phoneNumber}}<p>Student Phone Number: {{phoneNumber}}</p>{{/if}}
+    {{#if emailAddress}}<p>Student Email Address: {{emailAddress}}</p>{{/if}}
+    {{#if employment}}<p>Student looking for employment:
+        {{employment}}</p>{{/if}}
+    {{#if collaboration}}<p>Student looking for collaboration:
+        {{collaboration}}</p>{{/if}}
+    {{#if graduationDate}}<p>Date of Graduation: {{graduationDate}}</p>{{/if}}
+  </li>
+{{/each}}
