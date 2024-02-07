@@ -12,13 +12,46 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:first_name', async (req, res) => {
     try {
-        const studentData = await Student.findByPk(req.params.id, {
+        const studentData = await Student.findOne({
+        where: { first_name: req.params.first_name },
         attributes: { exclude: ['password'] },
         });
         if (!studentData) {
-        res.status(404).json({ message: 'No student found with this id!' });
+        res.status(404).json({ message: 'No student found with this name!' });
+        return;
+        }
+        res.json(studentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/work/:looking', async (req, res) => {
+    try {
+        const studentData = await Student.findAll({
+        where: { looking_for_work: req.params.looking === 'true' },
+        attributes: { exclude: ['password'] },
+        });
+        if (!studentData) {
+        res.status(404).json({ message: 'No student found!' });
+        return;
+        }
+        res.json(studentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/student/seeking/:collab', async (req, res) => {
+    try {
+        const studentData = await Student.findAll({
+        where: { seeking_collab: req.params.collab === 'true' },
+        attributes: { exclude: ['password'] },
+        });
+        if (!studentData) {
+        res.status(404).json({ message: 'No student found!' });
         return;
         }
         res.json(studentData);
