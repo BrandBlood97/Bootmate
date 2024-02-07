@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootmate</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  </head>
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
 
 <body>
   <div class="flex-column justify-space-around">
@@ -21,7 +22,7 @@
         <a href="/search">Search</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
@@ -38,7 +39,6 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

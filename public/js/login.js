@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
+      // If successful, redirect the browser to the search page
       document.location.replace('/search');
     } else {
       alert(response.statusText);
