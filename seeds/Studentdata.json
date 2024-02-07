@@ -6,6 +6,33 @@
         "looking_for_work": true,
         "seeking_collab": true,
         "email": "royreid3rd@gmail.com",
-        "password": "12345"
+        "password": "12345678"
+    },
+    {
+        "first_name": "Bilbo",
+        "last_name": "Baggins",
+        "graduation_month": "April",
+        "looking_for_work": false,
+        "seeking_collab": true,
+        "email": "bilbo.baggins@gmail.com",
+        "password": "imissmyring900"
+    },
+    {
+        "first_name": "Johnny",
+        "last_name": "Bravo",
+        "graduation_month": "April",
+        "looking_for_work": true,
+        "seeking_collab": false,
+        "email": "womanizer893@aol.com",
+        "password": "jumpingjacks893"
+    },
+    {
+        "first_name": "Luffy",
+        "last_name": "Monkey",
+        "graduation_month": "April",
+        "looking_for_work": false,
+        "seeking_collab": false,
+        "email": "kingofthepirates@yahoo.com",
+        "password": "PirateKing2020" 
     }
 ]
