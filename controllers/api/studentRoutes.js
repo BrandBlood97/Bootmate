@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Student } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -12,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:first_name", async (req, res) => {
+router.get("/:first_name", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findOne({
       where: { first_name: req.params.first_name },
@@ -28,7 +29,7 @@ router.get("/:first_name", async (req, res) => {
   }
 });
 
-router.get("/work/:looking", async (req, res) => {
+router.get("/work/:looking", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findAll({
       where: { looking_for_work: req.params.looking === "true" },
@@ -44,7 +45,7 @@ router.get("/work/:looking", async (req, res) => {
   }
 });
 
-router.get("/student/seeking/:collab", async (req, res) => {
+router.get("/student/seeking/:collab", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findAll({
       where: { seeking_collab: req.params.collab === "true" },
@@ -66,7 +67,6 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.student_id = studentData.id;
       req.session.logged_in = true;
-
       res.status(200).json(studentData);
     });
   } catch (err) {
@@ -107,6 +107,21 @@ router.post("/logout", (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const studentData = await Student.destroy({
+      where: { id: req.params.id },
+    });
+    if (!studentData) {
+      res.status(404).json({ message: "No student found with this id!" });
+      return;
+    }
+    res.status(200).json(studentData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
