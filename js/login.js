@@ -25,19 +25,23 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').value.trim();
+  const firstName = document.querySelector('#firstName-signup').value.trim();
+  const lastName = document.querySelector('#lastName-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const ufcClass = document.querySelector('#class-signup').value;
+  const graduationMonth = document.querySelector('#graduationMonth-signup').value;
+  const interestedInEmployment = document.querySelector('#employment-signup').value === 'true';
+  const interestedInCollaboration = document.querySelector('#collaboration-signup').value === 'true';
 
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
+  if (firstName && lastName && email) {
+    const response = await fetch('/api/students', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ firstName, lastName, email, ufcClass, graduationMonth, interestedInEmployment, interestedInCollaboration }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/search');
     } else {
       alert(response.statusText);
     }
