@@ -1,14 +1,16 @@
 <ul class="student-list-container"></ul>
-{{#each student}}
+<!-- Loop over each student in the array and render it to the page -->
+{{#each students as |student|}}
   <li class="student">
     <img src="./images/background-UCF.png" />
-    <h2>Student Name: {{firstName}} {{lastName}}</h2>
-    {{#if phoneNumber}}<p>Student Phone Number: {{phoneNumber}}</p>{{/if}}
-    {{#if emailAddress}}<p>Student Email Address: {{emailAddress}}</p>{{/if}}
-    {{#if employment}}<p>Student looking for employment:
-        {{employment}}</p>{{/if}}
-    {{#if collaboration}}<p>Student looking for collaboration:
-        {{collaboration}}</p>{{/if}}
-    {{#if graduationDate}}<p>Date of Graduation: {{graduationDate}}</p>{{/if}}
+    <h2>Student Name: {{student.first_name}} {{student.last_name}}</h2>
+    {{#if student.email}}<p>Student Email Address: {{student.email}}</p>{{/if}}
+    {{#if student.looking_for_work}}
+      <p>Student looking for employment: <input type="checkbox" {{if student.looking_for_work "checked"}}></p>
+    {{/if}}
+    {{#if student.seeking_collab}}
+      <p>Student looking for collaboration: <input type="checkbox" {{if student.seeking_collab "checked"}}></p>
+    {{/if}}
+    {{#if student.graduation_month}}<p>Date of Graduation: {{student.graduation_month}}</p>{{/if}}
   </li>
 {{/each}}
