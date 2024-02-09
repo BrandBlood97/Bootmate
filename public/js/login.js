@@ -22,35 +22,6 @@ const loginFormHandler = async (event) => {
   }
 };
 
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-
-  const firstName = document.querySelector('#firstName-signup').value.trim();
-  const lastName = document.querySelector('#lastName-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-  const employmentOpportunities = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
-  const collaboration = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
-
-  if (firstName && lastName && email && password && employmentOpportunities && collaboration) {
-    const response = await fetch('/api/students', {
-      method: 'POST',
-      body: JSON.stringify({ firstName, lastName, email, password, employmentOpportunities, collaboration }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/search');
-    } else {
-      alert(response.statusText);
-    }
-  }
-}
-
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
