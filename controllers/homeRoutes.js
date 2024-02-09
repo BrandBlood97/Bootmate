@@ -9,7 +9,11 @@ router.get('/login', async (req, res) => {
   });
 
 router.get('/search', async (req, res) => {
+  if (!loggedIn) {
+    res.redirect('/login');
+  } else {
     res.render('search');
-  });
+  }
+});
 
   module.exports = router;

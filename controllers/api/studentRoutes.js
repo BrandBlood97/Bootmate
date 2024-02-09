@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Student } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const studentData = await Student.findAll({
         attributes: { exclude: ['password'] },
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:first_name', async (req, res) => {
+router.get('/:first_name', withAuth, async (req, res) => {
     try {
         const studentData = await Student.findOne({
         where: { first_name: req.params.first_name },
@@ -28,7 +29,7 @@ router.get('/:first_name', async (req, res) => {
     }
 });
 
-router.get('/work/:looking', async (req, res) => {
+router.get('/work/:looking', withAuth, async (req, res) => {
     try {
         const studentData = await Student.findAll({
         where: { looking_for_work: req.params.looking === 'true' },
@@ -44,7 +45,7 @@ router.get('/work/:looking', async (req, res) => {
     }
 });
 
-router.get('/student/seeking/:collab', async (req, res) => {
+router.get('/student/seeking/:collab', withAuth, async (req, res) => {
     try {
         const studentData = await Student.findAll({
         where: { seeking_collab: req.params.collab === 'true' },

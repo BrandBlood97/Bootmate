@@ -29,8 +29,8 @@ const signupFormHandler = async (event) => {
   const lastName = document.querySelector('#lastName-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
-  const employmentOpportunities = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
-  const collaboration = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
+  const employmentOpportunities = document.querySelector('input[name="employmentOptions"]:checked').value;
+  const collaboration = document.querySelector('input[name="collaborationOptions"]:checked').value;
 
   if (firstName && lastName && email && password && employmentOpportunities && collaboration) {
     const response = await fetch('/api/students', {
