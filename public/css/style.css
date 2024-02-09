@@ -62,8 +62,12 @@ h1 {
   }
 
   .no-button:active {
-    background: rgb(170, 75, 75);
-    color: #000000;
+    background: rgb(170, 100, 100, 0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    text-decoration: none;
+    color: #ffffff;
   }
 
   .search-results {
