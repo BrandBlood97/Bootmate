@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Student } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const studentData = await Student.findAll({
       attributes: { exclude: ["password"] },
@@ -125,4 +125,4 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = router

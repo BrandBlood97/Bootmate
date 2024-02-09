@@ -32,8 +32,13 @@ router.get('/login', async (req, res) => {
   });
 
 router.get('/search', async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  } else {
     res.render('search');
-  });
+  }
+});
 
 router.get('/signup', async (req, res) => {
     res.render('signup');
