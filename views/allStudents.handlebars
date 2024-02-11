@@ -1,8 +1,11 @@
 <ul class="student-list-container"></ul>
 <!-- Loop over each student in the array and render it to the page -->
 {{#each students as |student|}}
-  <li class="student">
-    <img src="./images/background-UCF.png" />
+  <li class="student col" id="student">
+    <div class="container">
+    <img class="h-100 col-3" src="/images/background-UCF.png" />
+    </div>
+    <div class="container">
     <h2>Student Name: {{student.first_name}} {{student.last_name}}</h2>
     <p>Student Email Address: {{student.email}}</p>
     <p>Date of Graduation: {{student.graduation_month}}</p>
@@ -16,6 +19,6 @@
     {{else}}
       <p>Student looking for collaboration: <input type="checkbox"></p>
     {{/if}}
-    
+    </div>
   </li>
 {{/each}}

@@ -42,34 +42,6 @@ h1 {
     height: 150px;
 }
 
-/* .no-button {
-    background: rgb(255, 255, 255);
-    cursor: pointer;
-    color: #000000;
-    text-decoration: none;
-    font-size: 100%;
-    display: flex;
-    padding: 10px 20px;
-  } */
-  
-  .no-button:hover {
-    background: rgb(170, 100, 100, 0.3);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    text-decoration: none;
-    color: #ffffff;
-  }
-
-  .no-button:active {
-    background: rgb(170, 100, 100, 0.5);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    text-decoration: none;
-    color: #ffffff;
-  }
-
   .search-results {
     margin-top: 20px;
   }
@@ -97,7 +69,7 @@ nav a {
     font-size: 100%;
 }
 
-#new-user, #existing-user, #search-user, .no-button {
+#new-user, #existing-user, #search-user, #student {
     background: rgba( 255, 255, 255, 0.3 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
@@ -117,5 +89,3 @@ nav a {
 .img- {
     width: 500px;
 }
-
-

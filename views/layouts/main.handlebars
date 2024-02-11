@@ -13,12 +13,12 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
+      <h1><img src="/images/bootmate_logo.png" id="home"></h1>
 
       <nav>
-        <a href="/"><img src="/images/bootmate_logo.png" id="home"></a>
         <a href="/search" class="btn btn-warning">Search</a> ||
         <button class="btn btn-warning" id="logout">Logout</button>
-        <button class="btn btn-warning mr-4" id="all-students">All Students</button>
+        <a href="/api/students" class="btn btn-warning mr-4" id="all-students">All Students</a>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
