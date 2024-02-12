@@ -7,7 +7,8 @@ router.get("/", withAuth, async (req, res) => {
     const studentData = await Student.findAll({
       attributes: { exclude: ["password"] },
     });
-    res.json(studentData);
+    const students = studentData.map((student) => student.get({ plain: true }));
+    res.render('allStudents', {students});
   } catch (err) {
     res.status(500).json(err);
   }
